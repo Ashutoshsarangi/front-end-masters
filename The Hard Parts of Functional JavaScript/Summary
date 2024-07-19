@@ -1,0 +1,40 @@
+Functional Programming JS
+
+principles :-
+
+1. Pure Functions
+2. Avoid Side effects
+    a. Polluting outside scope
+    b. doing Async Operations
+    c. even console.logs
+3. Higher Order Functional
+    a. map
+    b. filter
+    c. reduce 
+4. Functional Composition
+    a. [array of Functions].reduce to do the Operation as like pipe
+        I. DisAdvantages:- Lets say a function need 3 param and some need 1
+5. Closure
+    a. Very very crutial + Back pack (P.L.S.R.D) (Persistance Lexical Scope Reference Data)
+6. Function Decoration 
+    a. Closure having a function as input and use it inside the back pack / return function.
+7. Partial Application (argument function arrangement)
+8. Currying
+
+
+------------------------------------
+Key Differences
+Purpose:
+
+Function Decoration: Modifies or extends the behavior of a function.
+Partial Application: Pre-fixes some arguments of a function to create a new function with fewer arguments.
+
+Implementation:
+
+Function Decoration: Involves wrapping a function with another function that calls the original function and potentially alters its input, output, or side effects.
+Partial Application: Involves creating a new function by fixing some arguments of an existing function, reducing the number of arguments the new function needs.
+
+Use Cases:
+
+Function Decoration: Useful for adding logging, caching, validation, or other cross-cutting concerns.
+Partial Application: Useful for creating specialized functions from more general ones, improving code reusability and readability.
