@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Frontend System Design Fundamentals</title>
+    <link rel="stylesheet" href="./index.css" />
+    <template id="card_template">
+      <article class="card">
+        <h3 class="card__title"></h3>
+        <div class="card__body">
+          <div class="card__body__image"></div>
+          <section class="card__body__content"></section>
+        </div>
+      </article>
+    </template>
+  </head>
+  <body>
+    <main id="container"></main>
+  </body>
+  <script>
+    const container = document.getElementById("container");
+    const template = document.getElementById("card_template");
+
+    /**
+     * @param {string} title
+     * @param {string} body
+     *
+     * @return {HTMLElement
+     */
+    function createCardComponent(title, body) {
+      // @todo - Implement function
+      const cardElement = template.content.cloneNode(true).firstElementChild;
+      // Why not firstChild -> it will return fragment
+      // Sow e need the article element so we need the firstElementChild
+      console.log(cardElement);
+      const [cardTitle, cardBody] = cardElement.querySelectorAll(
+        ".card__title, .card__body"
+      );
+
+      cardTitle.textContent = title;
+      cardBody.textContent = body;
+
+      return cardElement;
+    }
+
+    const component = createCardComponent(
+      "Frontend System Design: Fundamentals",
+      "This is a random body text"
+    );
+
+    container.appendChild(component);
+  </script>
+</html>
