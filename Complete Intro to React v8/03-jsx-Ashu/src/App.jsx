@@ -3,7 +3,7 @@ import Pet from "./Pet";
 
 const App = () => {
   return (
-    <div>
+    <div onClick={() => console.log()}>
       <h1>Adopt Me!</h1>
       <Pet name="Luna" animal="dog" breed="Havanese" />
       <Pet name="Pepper" animal="bird" breed="Cockatiel" />
