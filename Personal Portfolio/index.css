@@ -1,0 +1,369 @@
+@layer base {
+  :root {
+    --black: #000501;
+    --white: #ffffff;
+    --tan: #b6b57b;
+    --green: #31b28a;
+    --lightGreen: #8cdfc5;
+    --red: #ff4404;
+    --mainFont: "Lato", sans-serif;
+    --headingFont: "Josefin Sans", sans-serif;
+    --monoFont: "Fira Mono", monospace;
+    --baseSize: 1rem;
+    --scale: 1.2;
+    --h1: calc(var(--h2) * var(--scale));
+    --h2: calc(var(--h3) * var(--scale));
+    --h3: calc(var(--h4) * var(--scale));
+    --h4: calc(var(--h5) * var(--scale));
+    --h5: calc(var(--h6) * var(--scale));
+    --h6: var(--baseSize);
+  }
+
+  .colors {
+    display: flex;
+    gap: 20px;
+  }
+
+  .colors > * {
+    width: 50px;
+    height: 50px;
+    border: 1px solid red;
+  }
+
+  .white {
+    background-color: var(--white);
+  }
+
+  .black {
+    background-color: var(--black);
+  }
+
+  .tan {
+    background-color: var(--tan);
+  }
+
+  .red {
+    background-color: var(--red);
+  }
+
+  .green {
+    background-color: var(--green);
+  }
+
+  .lightgreen {
+    background-color: var(--lightGreen);
+  }
+
+  body {
+    font-family: var(--mainFont);
+    margin: 0;
+    padding: 0;
+    font-size: var(--baseSize);
+    line-height: 1.5; /* It is 1.5 times of the font */
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--headingFont);
+    text-transform: uppercase;
+  }
+
+  h1 {
+    font-size: var(--h1);
+  }
+
+  h2 {
+    font-size: var(--h2);
+  }
+
+  h3 {
+    font-size: var(--h3);
+  }
+
+  h4 {
+    font-size: var(--h4);
+  }
+
+  h5 {
+    font-size: var(--h5);
+  }
+
+  h6 {
+    font-size: var(--h6);
+  }
+
+  a {
+    color: var(--green);
+  }
+
+  a:hover {
+    text-decoration: none;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  figure {
+    margin: 0;
+    padding: 0;
+  }
+
+  .container {
+    max-width: 1200px;
+    border: 2px solid;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  .mono {
+    font-family: var(--monoFont);
+  }
+
+  /* border box model: https://css-tricks.com/box-sizing/ */
+  html {
+    box-sizing: border-box;
+  }
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
+
+  h1 {
+    color: red;
+  }
+
+  .button {
+    background-color: var(--green);
+    display: inline-block;
+    color: var(--black);
+    font-size: var(--headingFont);
+    text-transform: uppercase;
+    padding: 0.8rem;
+    border-radius: 5px;
+    margin: 5px;
+    font-weight: 600;
+    line-height: 1;
+    font-size: var(--h6);
+
+    text-decoration: none;
+  }
+  .button:hover {
+    background-color: var(--tan);
+  }
+
+  /* h/t Scott O'Hara https://css-tricks.com/inclusively-hidden/ */
+  .sr-only:not(:focus):not(:active) {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
+}
+
+@layer intro {
+  .intro {
+    background-image: url("https://assets.codepen.io/296057/fem-comet.jpg");
+    background-repeat: no-repeat;
+    background-position: 86% 20%;
+    color: var(--white);
+    padding: 4rem 0;
+  }
+
+  .name {
+    font-weight: 700;
+    font-size: var(--h5);
+  }
+}
+
+@layer contact {
+  .contact {
+    background-image: url("https://assets.codepen.io/296057/fem-aurora.jpg");
+    background-repeat: no-repeat;
+    background-position: 40% 50%;
+    color: var(--white);
+    padding: 4rem 0;
+    text-align: center;
+  }
+}
+
+@layer nav {
+  header {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  header h1 {
+    font-size: var(--h3);
+    font-weight: 300;
+    margin: 0;
+  }
+
+  header svg {
+    width: 30px;
+    fill: var(--green);
+  }
+  header a:hover svg {
+    fill: var(--black);
+  }
+
+  header a {
+    text-decoration: none;
+  }
+
+  nav {
+    font-family: var(--headingFont);
+    font-weight: 600;
+  }
+
+  nav .button {
+    padding: 0.6rem 0.4rem 0.4rem 0.4rem;
+    margin-top: -0.1rem;
+  }
+
+  h1 {
+    margin: 0;
+  }
+
+  nav ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 2rem;
+  }
+
+  nav a {
+    text-decoration: none;
+  }
+
+  @media (max-width: 830px) {
+    header {
+      justify-content: center;
+    }
+
+    header h1 {
+      flex-basis: 100%;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+  }
+
+  @media (max-width: 640px) {
+    header {
+      justify-content: space-between;
+    }
+
+    header h1 {
+      flex-basis: auto;
+    }
+    header button {
+      display: block;
+      font-size: 3rem;
+      line-height: 1;
+      border: 0;
+      background-color: transparent;
+      color: var(--green);
+    }
+    header button:hover {
+      color: var(--red);
+    }
+
+    header button::after {
+      content: "\2630";
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      right: 200%;
+      width: 100vw;
+      height: 100vh;
+      background: #fff;
+      padding-top: 20%;
+      transition: right 0s 0.5s opacity 0.5s;
+    }
+
+    button:focus + nav,
+    button:focus-within + nav {
+      right: 0;
+      opacity: 1;
+      transition: right 0s opacity 0.5s;
+    }
+    nav ul {
+      display: block;
+      text-align: center;
+      position: relative;
+      top: -50vh;
+      transition: top 0.5s;
+    }
+
+    button:focus + nav ul,
+    button:focus-within + nav ul {
+      top: 0;
+    }
+
+    nav a:any-link:not(.button) {
+      display: block;
+      padding: 1.5rem;
+    }
+
+    nav .button {
+      margin-top: 1.5rem;
+      display: inline-block;
+    }
+
+    nav ul::after {
+      content: "\2716";
+      color: var(--green);
+      position: absolute;
+      display: block;
+      top: 0.125rem;
+      right: 0.125rem;
+      font-size: 3rem;
+      line-height: 1;
+    }
+  }
+}
+@layer footer {
+  footer {
+    text-align: center;
+    padding: 6rem 0;
+    background-image: url("https://assets.codepen.io/296057/fem-stars.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: var(--white);
+  }
+
+  footer ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 2rem 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 3rem;
+    font-size: 3rem;
+  }
+
+  footer svg {
+    width: 40px;
+    fill: var(--white);
+  }
+
+  footer svg:hover {
+    fill: var(--green);
+  }
+}
